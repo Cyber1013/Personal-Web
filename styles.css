@@ -1,0 +1,275 @@
+:root {
+  --bg: #060b16;
+  --bg-alt: #0c1529;
+  --accent: #6de2ff;
+  --accent-2: #7f9bff;
+  --text: #eaf4ff;
+  --muted: #99adcc;
+  --card: rgba(10, 22, 42, 0.55);
+  --border: rgba(156, 196, 255, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #102240, var(--bg) 46%);
+  scroll-behavior: smooth;
+}
+
+#cyber-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+main,
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 4vw;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(5, 10, 20, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-content {
+  width: min(900px, 92vw);
+  margin: auto;
+  padding: 2.25rem;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-size: 0.77rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  margin: 0.5rem 0 1rem;
+}
+
+.hero-content p {
+  color: #d8e7ff;
+  max-width: 70ch;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.1rem 0;
+}
+
+.hero-meta span {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: #c5dcff;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+}
+
+.btn {
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 0.7rem;
+  padding: 0.7rem 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--accent-2), var(--accent));
+  color: #07162b;
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.section {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 4.5rem 0;
+}
+
+.section-header {
+  margin-bottom: 1.4rem;
+}
+
+.section-tag {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin: 0.3rem 0;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+.grid.two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.15rem;
+}
+
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+  padding-left: 1rem;
+  color: #c8ddff;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(var(--accent), var(--accent-2));
+}
+
+.contact {
+  padding-bottom: 6rem;
+}
+
+.scroll-indicator {
+  width: 2px;
+  height: 58px;
+  margin: 0 auto 1.2rem;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.scroll-indicator span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    top: 48px;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid.two,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .top-nav {
+    position: relative;
+  }
+}
